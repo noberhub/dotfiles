@@ -12,17 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 " 導入したいプラグインを以下に列挙
 " Plugin '[Github Author]/[Github repo]' の形式で記入
 Plugin 'airblade/vim-gitgutter'         "default Plugin
-Plugin 'joshdick/onedark.vim'           "カラースキーム
-Plugin 'KeitaNakamura/railscasts.vim'   "カラースキーム
-Plugin 'crusoexia/vim-monokai'          "カラースキーム
-Plugin 'jacoborus/tender.vim'           "カラースキーム
-Plugin 'altercation/vim-colors-solarized'   "カラースキーム
-Plugin 'KeitaNakamura/neodark.vim'		"カラースキーム
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'itchyny/lightline.vim'          "ステータスライン
 Plugin 'ntpeters/vim-better-whitespace' "空白可視化
 Plugin 'simeji/winresizer'				"ウィンドウリサイズ
 Plugin 'reireias/vim-cheatsheet'		"チートシートを別ペインで
-Plugin 'glidente/memolist.vim'			"シンプルなメモ管理
+"Plugin 'glidente/memolist.vim'			"シンプルなメモ管理
 Plugin 'vim-jp/vimdoc-ja'				"vimヘルプの日本語版
 
 call vundle#end()
@@ -34,6 +29,14 @@ filetype plugin indent on
 " :PluginInstall
 " ・ターミナル上で以下のコマンドを実行
 " $ vim +PluginInstall +qall
+"
+" Vundleでプラグインをアップデート
+" :PluginUpdate
+"
+" Vundleでプラグインをアンインストール
+" プラグインの記述を削除、またはコメントアウトし、
+" 次のコマンドを実行
+" :PluginClean
 
 "------------------------------------------------------
 " 基本的な設定
@@ -79,10 +82,11 @@ set showcmd			"入力中のコマンドをステータス右に表示する
 
 "set helpheight=999     "ヘルプを画面いっぱいに開く
 
-"onedark.vim用設定（カラースキーム 前に記述）
-"let g:onedark_hide_endofbuffer = 1
-
 colorscheme molokai		"エディタカラースキーム
+
+"molokai用設定
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
@@ -110,7 +114,7 @@ if !has('gui_running')
 endif
 
 "行番号のハイライト設定（以下3行でセット）
-hi CursorLineNr ctermbg=0 ctermfg=4     "行番号に色を付ける
+hi CursorLineNr ctermbg=NONE ctermfg=4     "行番号に色を付ける
 set cursorline
 hi clear CursorLine                  "カーソルラインを消す
 
@@ -118,6 +122,12 @@ hi clear CursorLine                  "カーソルラインを消す
 highlight! Normal ctermbg=NONE guibg=NONE
 highlight! NonText ctermbg=NONE guibg=NONE
 highlight! LineNr ctermbg=NONE guibg=NONE
+highlight! SignColumn ctermbg=none guibg=NONE
+highlight! VertSplit ctermbg=none guibg=NONE
+
+"morokaiのカラーを変更
+highlight! Comment ctermfg=244
+highlight! Visual  ctermbg=195
 
 "------------------------------------------------------
 " 検索設定
@@ -147,9 +157,6 @@ set directory=~/.vim/tmp        "スワップファイルを一箇所に
 "------------------------------------------------------
 "その他
 "------------------------------------------------------
-let g:airline_detect_crypt=1	"暗号化検出を有効にする
-set cryptmethod=blowfish2		"利用する暗号化方式
-
 "vimgrepした時に自動的にquickfix-windowを開くようにする
 "autocmd QuickFixCmdPost vimgrep cwindow
 
@@ -169,7 +176,7 @@ nnoremap <Space>zz <C-z>
 "winresizer.vim用の設定
 let g:winresizer_start_key='<C-@>'	"ウィンドウリサイズ開始
 "let g:winresizer_gui_enable=1		"GUIでウィンドウ自体をリサイズする
-let g:winresizer_vert_resize=4         "横リサイズの増減量
+let g:winresizer_vert_resize=2         "横リサイズの増減量
 let g:winresizer_horiz_resize=1        "縦リサイズの増減量
 
 "vim-cheatsheet用の設定
