@@ -24,9 +24,6 @@ export PATH="$HOME/bin:$PATH"
 # ビープ音を無効にする
 setopt no_beep
 
-# Ctrl+Dでzshを終了しない
-setopt ignore_eof
-
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
 
