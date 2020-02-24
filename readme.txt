@@ -49,4 +49,3 @@ zshシェルのフレームワークPreztoをインストールしている為�
 # chmod +x dotfileslink.sh		ファイルにパーミッション設定
 # vim dotfileslink.sh			エディタで編集
 
-
