@@ -6,7 +6,7 @@ dotfilesをDropboxで共有
  （zsh関連はprezto/runcomsディレクトリあるのでコピーの方がいいかも。
   また、prezto内にあるzsh関連のファイルはドットが外れてるので、
   ファイル名の先頭に'.'を付ける事）
-　　
+
 ・sh dotfilesLink.sh を実行してシンボリックリンクを~/に作成
 ・シンボリックリンクが設定されているか全て確認
   la ~/.vimrc のコマンドで確認できる
@@ -48,10 +48,4 @@ zshシェルのフレームワークPreztoをインストールしている為�
 # touch dotfileslink.sh			からファイルを作成
 # chmod +x dotfileslink.sh		ファイルにパーミッション設定
 # vim dotfileslink.sh			エディタで編集
-
-
-
-
-
-
 
