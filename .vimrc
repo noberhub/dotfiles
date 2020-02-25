@@ -17,6 +17,7 @@ Plugin 'itchyny/lightline.vim'          "ステータスライン
 Plugin 'ntpeters/vim-better-whitespace' "空白可視化
 Plugin 'simeji/winresizer'				"ウィンドウリサイズ
 Plugin 'reireias/vim-cheatsheet'		"チートシートを別ペインで
+Plugin 'tpope/vim-fugitive'             "vim上でgit操作
 "Plugin 'glidente/memolist.vim'			"シンプルなメモ管理
 Plugin 'vim-jp/vimdoc-ja'				"vimヘルプの日本語版
 
@@ -105,7 +106,14 @@ endif
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ }
 
 " 256色サポート
