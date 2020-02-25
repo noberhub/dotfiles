@@ -18,7 +18,7 @@ Plugin 'ntpeters/vim-better-whitespace' "空白可視化
 Plugin 'simeji/winresizer'				"ウィンドウリサイズ
 Plugin 'reireias/vim-cheatsheet'		"チートシートを別ペインで
 Plugin 'tpope/vim-fugitive'             "vim上でgit操作
-"Plugin 'glidente/memolist.vim'			"シンプルなメモ管理
+Plugin 'glidenote/memolist.vim'			"シンプルなメモ管理
 Plugin 'vim-jp/vimdoc-ja'				"vimヘルプの日本語版
 
 call vundle#end()
@@ -188,16 +188,16 @@ let g:winresizer_vert_resize=2         "横リサイズの増減量
 let g:winresizer_horiz_resize=1        "縦リサイズの増減量
 
 "vim-cheatsheet用の設定
-"let g:cheatsheet#cheat_file = 'チートファイル指定'
+let g:cheatsheet#cheat_file = '~/Dropbox/VimMemo/vim_memo.md'
 ":Cheat で表示/非表示を切り替え
-"dotfilesの準備が出来次第、パスを設定
 
 "memolist.vim用の設定
-map <Leader>mn  :MemoNew<CR>		"\mnで新規メモ
-map <Leader>ml  :MemoList<CR>		"\mlでメモの一覧表示
-map <Leader>mg  :MemoGrep<CR>		"\mgでメモの検索
-"let g:memolist_path = "ディレクトリ指定"	"メモの保存先
-let g:memolist_memo_suffix = "txt"		"テキスト形式
+nnoremap <Leader>mn :MemoNew<CR>        "\mnで新規メモ
+nnoremap <Leader>ml :MemoList<CR>       "\mlでメモの一覧表示
+nnoremap <Leader>mg :MemoGrep<CR>       "\mgでメモの検索
+
+let g:memolist_path = "$HOME/Dropbox/VimMemo"	"メモの保存先
+let g:memolist_memo_suffix = "txt"				"テキスト形式
 
 "======================================================
 " シンタックスのハイライトグループ名とLink toを取得するスクリプト
