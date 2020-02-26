@@ -188,7 +188,7 @@ let g:winresizer_vert_resize=2         "横リサイズの増減量
 let g:winresizer_horiz_resize=1        "縦リサイズの増減量
 
 "vim-cheatsheet用の設定
-let g:cheatsheet#cheat_file = '~/Dropbox/VimMemo/vim_memo.md'
+let g:cheatsheet#cheat_file = '~/Dropbox/Memo/vim_memo.txt'
 ":Cheat で表示/非表示を切り替え
 
 "memolist.vim用の設定
@@ -196,8 +196,8 @@ nnoremap <Leader>mn :MemoNew<CR>        "\mnで新規メモ
 nnoremap <Leader>ml :MemoList<CR>       "\mlでメモの一覧表示
 nnoremap <Leader>mg :MemoGrep<CR>       "\mgでメモの検索
 
-let g:memolist_path = "$HOME/Dropbox/VimMemo"	"メモの保存先
-let g:memolist_memo_suffix = "txt"				"テキスト形式
+let g:memolist_path = "~/Dropbox/Memo"		"メモの保存先
+let g:memolist_memo_suffix = "txt"			"テキスト形式
 
 "======================================================
 " シンタックスのハイライトグループ名とLink toを取得するスクリプト
